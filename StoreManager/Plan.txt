@@ -1,0 +1,44 @@
+﻿Проверка долга
+	SELECT 
+	Contracts.date_of_signing AS "Дата",
+	Contracts.date_expiration AS "Дата окончания", 
+	Shoppers.surname_shopper AS "Фамилия", 
+	Shoppers.first_name_shopper AS "Имя", 
+	Shoppers.last_name_shopper AS "Отчество", 
+	Contracts.summ_contract AS "Сумма",
+	Contracts.prepayment AS "Аванс",
+	Contracts.current_debt AS "Остаток", 
+	Shoppers.mobile_phone AS "Мобильный телефон", 
+	Shoppers.home_phone AS "Домашний телефон",	
+	Type_of_contract.name_type_of_contract AS "Тип", 
+	Shoppers.country_name AS "Страна", 
+	Shoppers.region_name AS "Область", 	 	 
+	Shoppers.area_name AS "Район", 
+	Shoppers.city_name AS "Населенный пункт", 
+	Shoppers.street_variant AS "Тип улицы", 
+	Shoppers.street AS "Улица", 
+	Shoppers.house AS "Дом", 
+	Shoppers.apartment AS "Квартира",
+	Shoppers.serial_passport AS "Серия паспорта",
+	Shoppers.number_passport AS "Номер паспорта",
+	Shoppers.department_name_passport AS "Орган выдавший паспорт",
+	Shoppers.date_of_issue_passport AS "Дата выдачи паспорта",
+	Shoppers.country_name_residence AS "Страна проживания",
+	Shoppers.region_name_residence AS "Область проживания",
+	Shoppers.area_name_residence AS "Район проживания",
+	Shoppers.city_name_residence AS "Населенный пункт проживания",
+	Shoppers.street_variant_residence AS "Тип улицы проживания",
+	Shoppers.street_residence AS "Улица проживания",
+	Shoppers.house_residence AS "Дом проживания",
+	Shoppers.apartment_residence AS "Квартира проживания",
+	Contracts.id_contract AS "Номер договора",
+	User_list.short_name AS "Пользователь"
+	FROM 
+	Shoppers, Contracts, Type_of_contract, User_list 
+	WHERE 
+	Contracts.id_shopper = Shoppers.id_shopper AND 
+	Contracts.id_type_of_contract = Type_of_contract.id_type_of_contract AND
+	Contracts.id_user = User_list.id_user AND date_expiration < '05/10/2021' AND
+	current_debt >0
+	ORDER BY Contracts.date_of_signing DESC
+

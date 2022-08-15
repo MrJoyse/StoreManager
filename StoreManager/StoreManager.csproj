@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82106F54-D6F1-48B9-8146-29208F5C3EE8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StoreManager</RootNamespace>
+    <AssemblyName>StoreManager</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo-1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.8\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commercial.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="ContractDeferred.cs" />
+    <Compile Include="ContractRent.cs" />
+    <Compile Include="ContractWindow.cs" />
+    <Compile Include="CreditBelinvestBank.cs" />
+    <Compile Include="DBSQLServerUtils.cs" />
+    <Compile Include="Firm.cs" />
+    <Compile Include="Firm_debt.cs" />
+    <Compile Include="Firm_Employee.cs" />
+    <Compile Include="FormChangeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangeUser.Designer.cs">
+      <DependentUpon>FormChangeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommercial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommercial.Designer.cs">
+      <DependentUpon>FormCommercial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormContract.Designer.cs">
+      <DependentUpon>FormContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCredit.Designer.cs">
+      <DependentUpon>FormCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditEmployee.Designer.cs">
+      <DependentUpon>FormEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditFirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditFirm.Designer.cs">
+      <DependentUpon>FormEditFirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditPayment.Designer.cs">
+      <DependentUpon>FormEditPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditProduct.Designer.cs">
+      <DependentUpon>FormEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditShopper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditShopper.Designer.cs">
+      <DependentUpon>FormEditShopper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditUser.Designer.cs">
+      <DependentUpon>FormEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFirmsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFirmsList.Designer.cs">
+      <DependentUpon>FormFirmsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewFirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewFirm.Designer.cs">
+      <DependentUpon>FormNewFirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewEmployee.Designer.cs">
+      <DependentUpon>FormNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportFromDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportFromDate.Designer.cs">
+      <DependentUpon>FormReportFromDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectFirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectFirm.Designer.cs">
+      <DependentUpon>FormSelectFirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewShopper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewShopper.Designer.cs">
+      <DependentUpon>FormNewShopper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrders.Designer.cs">
+      <DependentUpon>FormOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaymentsActual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaymentsActual.Designer.cs">
+      <DependentUpon>FormPaymentsActual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShopperSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShopperSearch.Designer.cs">
+      <DependentUpon>FormShopperSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShoppersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShoppersList.Designer.cs">
+      <DependentUpon>FormShoppersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsersList.Designer.cs">
+      <DependentUpon>FormUsersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionControl.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="PrintWordContract.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuerySQLServer.cs" />
+    <Compile Include="Reports.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Shipment_Document.cs" />
+    <Compile Include="Shopper.cs" />
+    <Compile Include="User.cs" />
+    <None Include="Resources\icons8-меню-128.png" />
+    <None Include="Resources\icons8-ключ-128.png" />
+    <None Include="Resources\icons8-удалить-128 %281%29.png" />
+    <None Include="Resources\icons8-отменить-2-64.png" />
+    <None Include="Resources\icons8-контакты-64.png" />
+    <None Include="Resources\icons8-разблокировать-48.png" />
+    <None Include="Resources\icons8-галочка-48.png" />
+    <None Include="Resources\icons8-галочка-24.png" />
+    <None Include="Resources\icons8-галочка-20.png" />
+    <None Include="Resources\icons8-отменить-2-48.png" />
+    <None Include="Resources\icons8-отменить-2-20.png" />
+    <None Include="Resources\icons8-отменить-2-15.png" />
+    <None Include="Resources\icons8-галочка-15.png" />
+    <None Include="Resources\icons8-сохранить-24.png" />
+    <None Include="Resources\icons8-закрыть-окно-24.png" />
+    <None Include="Resources\icons8-меню-пользователя,-мужчина-24.png" />
+    <None Include="Resources\icons8-grocery-store-48.png" />
+    <None Include="Resources\icons8-отдел-80.png" />
+    <None Include="Resources\icons8-бюджет-240.png" />
+    <None Include="Resources\icons8-напряженный-труд-48.png" />
+    <None Include="Resources\icons8-обслуживание-48.png" />
+    <None Include="Resources\icons8-закрыть-вкладку-48.png" />
+    <None Include="Resources\icons8-документ-48.png" />
+    <None Include="bin\Debug\Icon\cart_add.png" />
+    <None Include="bin\Debug\Icon\cart_delete.png" />
+    <None Include="bin\Debug\Icon\coins_add.png" />
+    <None Include="bin\Debug\Icon\coins_delete.png" />
+    <None Include="bin\Debug\Icon\calculator.png" />
+    <None Include="bin\Debug\Icon\door_out.png" />
+    <None Include="bin\Debug\Icon\page_delete.png" />
+    <None Include="bin\Debug\Icon\cart_edit.png" />
+    <None Include="bin\Debug\Icon\bad_decision.ico" />
+    <None Include="bin\Debug\Icon\bad_decision.jpg" />
+    <None Include="Resources\icons8-добавить-пользователя-мужской-тип-кожи-7-48.png" />
+    <None Include="Resources\icons8-открыть-папку-48.png" />
+    <None Include="Resources\icons8-открыть-папку-24.png" />
+    <None Include="Resources\icons8-новая-компания-24.png" />
+    <None Include="Resources\icons8-компания-клиент-24.png" />
+    <None Include="Resources\icons8-добавить-контакт-в-компанию-24.png" />
+    <None Include="Resources\icons8-здание-банка-48.png" />
+    <None Include="Resources\icons8-документ-word-48.png" />
+    <None Include="Resources\icons8-документы-48.png" />
+    <None Include="Resources\icons8-добавить-24.png" />
+    <None Include="Resources\icons8-добавить-пользователя-24.png" />
+    <None Include="Resources\icons8-галочка2-24.png" />
+    <None Include="Resources\icons8-задание-выполнено-24.png" />
+    <Content Include="logo-1.ico" />
+    <Content Include="logo-2.ico" />
+    <Content Include="logo-3.ico" />
+    <Content Include="logo.ico" />
+    <Content Include="ms-1.ico" />
+    <Content Include="ms-2 %281%29.ico" />
+    <Content Include="ms-2.ico" />
+    <None Include="Resources\icons8-обновить-48.png" />
+    <None Include="Resources\icons8-обновить_анимация.gif" />
+    <None Include="Resources\icons8-задолженность-48.png" />
+    <Content Include="Resources\icons8-отменить-2-128.png" />
+    <None Include="Resources\icons8-перелогиниться-48.png" />
+    <None Include="Resources\icons8-соглашение-240.png" />
+    <None Include="Resources\icons8-соглашение-48.png" />
+    <None Include="Resources\icons8-поиск-48.png" />
+    <None Include="Resources\icons8-печать-48.png" />
+    <None Include="Resources\icons8-поиск-16.png" />
+    <None Include="Resources\icons8-офисный-телефон-24.png" />
+    <None Include="Resources\icons8-почта-базы-данных-24.png" />
+    <None Include="Resources\icons8-редактировать-мужчину-пользователя-24.png" />
+    <None Include="Resources\icons8-отмеченный-чекбокс-24.png" />
+    <None Include="Resources\icons8-поставить-ссылку-на-родительскую-компанию-24.png" />
+    <None Include="Resources\icons8-редактировать-свойство-24.png" />
+    <None Include="Resources\icons8-поиск_анимация.gif" />
+    <None Include="Resources\icons8-отправить-список-24.png" />
+    <None Include="Resources\icons8-помощь-48.png" />
+    <None Include="Resources\icons8-промежуток-дат-48.png" />
+    <None Include="Resources\icons8-параметры-фильтра-48.png" />
+    <Content Include="Resources\icons8-сохранить-15.png" />
+    <None Include="Resources\icons8-чаевые-48.png" />
+    <None Include="Resources\icons8-удалить-48.png" />
+    <None Include="Resources\icons8-удалить-навсегда-24.png" />
+    <None Include="Resources\icons8-удалить-пользователя-24.png" />
+    <None Include="Resources\icons8-фильтр-48.png" />
+    <Content Include="tekhno_sfera3232.ico" />
+    <None Include="bin\Debug\Icon\copy.jpg" />
+    <None Include="bin\Debug\Icon\page_copy.png" />
+    <Content Include="Plan.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="FormChangeUser.resx">
+      <DependentUpon>FormChangeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommercial.resx">
+      <DependentUpon>FormCommercial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormContract.resx">
+      <DependentUpon>FormContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCredit.resx">
+      <DependentUpon>FormCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditEmployee.resx">
+      <DependentUpon>FormEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditFirm.resx">
+      <DependentUpon>FormEditFirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditPayment.resx">
+      <DependentUpon>FormEditPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditProduct.resx">
+      <DependentUpon>FormEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditShopper.resx">
+      <DependentUpon>FormEditShopper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditUser.resx">
+      <DependentUpon>FormEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFirmsList.resx">
+      <DependentUpon>FormFirmsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewFirm.resx">
+      <DependentUpon>FormNewFirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewEmployee.resx">
+      <DependentUpon>FormNewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportFromDate.resx">
+      <DependentUpon>FormReportFromDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectFirm.resx">
+      <DependentUpon>FormSelectFirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewShopper.resx">
+      <DependentUpon>FormNewShopper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrders.resx">
+      <DependentUpon>FormOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaymentsActual.resx">
+      <DependentUpon>FormPaymentsActual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShopperSearch.resx">
+      <DependentUpon>FormShopperSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShoppersList.resx">
+      <DependentUpon>FormShoppersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsersList.resx">
+      <DependentUpon>FormUsersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="bin\Debug\Icon\application_form_delete.png" />
+    <None Include="bin\Debug\Icon\application_delete.png" />
+    <None Include="bin\Debug\Icon\page_edit.png" />
+    <None Include="bin\Debug\Icon\printer.png" />
+    <None Include="bin\Debug\Icon\folder_find.png" />
+    <None Include="bin\Debug\Icon\user_add.png" />
+    <None Include="bin\Debug\Icon\user_edit.png" />
+    <None Include="bin\Debug\Icon\user_delete.png" />
+    <None Include="bin\Debug\Icon\page_refresh.png" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon\table_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon\user_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon\page_word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon\textfield_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Icon\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.targets" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.3.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.targets')" />
+</Project>

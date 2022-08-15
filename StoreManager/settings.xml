@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Server_name>BOSS-PC\</Server_name>
+  <Database_name>StoreManager</Database_name>
+  <Period_of_execution>21</Period_of_execution>
+  <Path_template_contract>d:\StoreManager\StoreManager\bin\Debug\Template\Template_contract.dotx</Path_template_contract>
+  <Path_save_contract>d:\Договора\Рассрочки\</Path_save_contract>
+  <Path_template_window>d:\StoreManager\StoreManager\bin\Debug\Template\Template_window.dotx</Path_template_window>
+  <Path_save_window>d:\Договора\Окна без отсрочки\</Path_save_window>
+  <Path_template_supply>d:\StoreManager\StoreManager\bin\Debug\Template\Template_supply.dotx</Path_template_supply>
+  <Path_save_supply>d:\Договора\Поставка без отсрочки\</Path_save_supply>
+  <Path_template_window_with_credit>d:\StoreManager\StoreManager\bin\Debug\Template\Template_window_with_credit.dotx</Path_template_window_with_credit>
+  <Path_save_window_with_credit>d:\Договора\Окна с отсрочкой\</Path_save_window_with_credit>
+  <Path_template_supply_with_credit>d:\StoreManager\StoreManager\bin\Debug\Template\Template_supply_with_credit.dotx</Path_template_supply_with_credit>
+  <Path_save_supply_with_credit>d:\Договора\Поставка с отсрочкой\</Path_save_supply_with_credit>
+  <Path_template_order>d:\StoreManager\StoreManager\bin\Debug\Template\Template_order.dotx</Path_template_order>
+  <Path_save_order>d:\Заказы\Store\</Path_save_order>
+  <Path_template_rent>d:\StoreManager\StoreManager\bin\Debug\Template\Template_rent.dotx</Path_template_rent>
+  <Path_save_rent>d:\Договора\Аренда\</Path_save_rent>
+  <Path_template_commercial>d:\StoreManager\StoreManager\bin\Debug\Template\Template_commercial.dotx</Path_template_commercial>
+  <Path_save_commercial>d:\Коммерческие предложения\</Path_save_commercial>
+  <Name_table>temp_JOYS_PC_admin</Name_table>
+  <Name_pc>JOYS_PC</Name_pc>
+  <Delivery_terms>доставка от 400.00 срок поставки 21 рабочий день</Delivery_terms>
+  <Bookmarks_Number_Contract>number_contract</Bookmarks_Number_Contract>
+  <Bookmarks_Date_Of_Signing>date_of_signing</Bookmarks_Date_Of_Signing>
+  <Bookmarks_Declension>declension</Bookmarks_Declension>
+  <Bookmarks_Documents>documents</Bookmarks_Documents>
+  <Bookmarks_Date_Documents>date_documents</Bookmarks_Date_Documents>
+  <Bookmarks_Surname>surname</Bookmarks_Surname>
+  <Bookmarks_First_Name>first_name</Bookmarks_First_Name>
+  <Bookmarks_Last_Name>last_name</Bookmarks_Last_Name>
+  <Bookmarks_Full_Adress>full_adress</Bookmarks_Full_Adress>
+  <Bookmarks_Surname_Signing>surname_shopper_signing</Bookmarks_Surname_Signing>
+  <Bookmarks_First_Name_Signing>first_name_shopper_signing</Bookmarks_First_Name_Signing>
+  <Bookmarks_Last_Name_Signing>last_name_shopper_signing</Bookmarks_Last_Name_Signing>
+  <Bookmarks_Serial_Passport>serial_passport</Bookmarks_Serial_Passport>
+  <Bookmarks_Number_Passport>number_passport</Bookmarks_Number_Passport>
+  <Bookmarks_Full_Adress_Shopper_Signing>full_adress_shopper_signing</Bookmarks_Full_Adress_Shopper_Signing>
+  <Bookmarks_Date_Of_Issue_Passport>date_of_issue_passport</Bookmarks_Date_Of_Issue_Passport>
+  <Bookmarks_Department_Name_Passport>department_name_passport</Bookmarks_Department_Name_Passport>
+  <Bookmarks_Mobile_Phone>mobile_phone</Bookmarks_Mobile_Phone>
+  <Bookmarks_Home_Phone>home_phone</Bookmarks_Home_Phone>
+  <Bookmarks_Prepayment>prepayment</Bookmarks_Prepayment>
+  <Bookmarks_Period_Of_Execution>period_of_execution</Bookmarks_Period_Of_Execution>
+  <Bookmarks_Name_Shopper_Signing_Abbreviated>name_shopper_signing_abbreviated</Bookmarks_Name_Shopper_Signing_Abbreviated>
+  <Bookmarks_Full_Adress_Residence>full_adress_residence</Bookmarks_Full_Adress_Residence>
+  <Bookmarks_Rental_Period>rental_period</Bookmarks_Rental_Period>
+  <Bookmarks_Rental_Price>rental_price</Bookmarks_Rental_Price>
+  <Bookmarks_Name_Rented_Instrument>name_rented_instrument</Bookmarks_Name_Rented_Instrument>
+  <Bookmarks_Summ_Order>summ_order</Bookmarks_Summ_Order>
+  <Bookmarks_Copy>copy</Bookmarks_Copy>
+  <Bookmarks_Summ_Сommercial>summ_commercial</Bookmarks_Summ_Сommercial>
+  <Bookmarks_Summ_Contract>summ_contract</Bookmarks_Summ_Contract>
+</Settings>
